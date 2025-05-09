@@ -8,14 +8,15 @@ const Doctors = () => {
   const [filterDoc, setFilterDoc] = useState([]);
   const navigate = useNavigate();
 
-  const applyFilter = () => {
+ const applyFilter = () => {
+    const allowedSpecialities = ['gynecologist', 'dermatologist', 'pediatricians', 'neurologist'];
+    let filteredDoctors = doctors.filter(doc => allowedSpecialities.includes(doc.speciality.toLowerCase()));
+
     if (speciality) {
-      setFilterDoc(
-        doctors.filter(doc => doc.speciality.toLowerCase() === speciality.toLowerCase())
-      );
-    } else {
-      setFilterDoc(doctors);
+      filteredDoctors = filteredDoctors.filter(doc => doc.speciality.toLowerCase() === speciality.toLowerCase());
     }
+
+    setFilterDoc(filteredDoctors);
   };
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const Doctors = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="bg-white rounded-xl p-4">
             <div className="flex flex-col gap-4 text-sm">
-              {['General Physician', 'Gynecologist', 'Dermatologist', 'Pediatricians', 'Neurologist', 'Gastroenterologist'].map(spec => (
+{['Gynecologist', 'Dermatologist', 'Pediatricians', 'Neurologist'].map(spec => (
                 <p
                   key={spec}
                   onClick={() => navigate(`/doctors/${spec.toLowerCase().replace(/ /g, '-')}`)}
