@@ -6,7 +6,7 @@ import Banner from '../components/Banner';
 
 const Home = () => {
   return (
-    <div className='text-4xl text-green-700 p-10'>
+    <div className='text-4xl text-gray-700 p-10'>
         <Header/>
         <SpecialityMenu/>
         <TopDoctors/>

@@ -11,7 +11,7 @@ const DoctorList = ({ doctors }) => {
           className="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer hover:shadow-lg transition duration-200"
           onClick={() => navigate(`/appointment/${item.id}`)}
         >
-          <img
+<img
             className="bg-blue-50 rounded-t-xl h-60 w-full object-cover object-position-top hover:translate-y-[-5px] transition duration-200"
             src={item.image}
             alt=""
