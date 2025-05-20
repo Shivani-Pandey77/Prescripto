@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import { assets } from '../assets';
-import RelatedDoctors from '../components/Relateddoctors';
+import RelatedDoctors from '../components/RelatedDoctors';
 
 const Appointment = () => {
   const { docId } = useParams();
